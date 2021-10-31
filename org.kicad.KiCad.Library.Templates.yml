@@ -2,7 +2,7 @@ id: org.kicad.KiCad.Library.Templates
 branch: stable
 runtime: org.kicad.KiCad
 runtime-version: stable
-sdk: org.freedesktop.Sdk//20.08
+sdk: org.freedesktop.Sdk//21.08
 build-extension: true
 separate-locales: false
 appstream-compose: false
@@ -19,7 +19,7 @@ modules:
     --origin=flatpak org.kicad.KiCad.Library.Templates
   sources:
   - type: archive
-    url: https://gitlab.com/kicad/libraries/kicad-templates/-/archive/5.1.10/kicad-templates-5.1.10.tar.gz
-    sha256: f2c44d6dc69fc3c7db05f57c5caf290721e0bba3fe686e4e3bc2765e3f314668
+    url: https://gitlab.com/kicad/libraries/kicad-templates/-/archive/5.1.11/kicad-templates-5.1.11.tar.gz
+    sha256: 66272a39f624f5efa494b6bde2c10f3553167dbae5f52ca14a786bfc002b7961
   - type: file
     path: org.kicad.KiCad.Library.Templates.metainfo.xml
