@@ -19,7 +19,7 @@ modules:
     --origin=flatpak org.kicad.KiCad.Library.Templates
   sources:
   - type: archive
-    url: https://gitlab.com/kicad/libraries/kicad-templates/-/archive/5.1.11/kicad-templates-5.1.11.tar.gz
-    sha256: 66272a39f624f5efa494b6bde2c10f3553167dbae5f52ca14a786bfc002b7961
+    url: https://gitlab.com/kicad/libraries/kicad-templates/-/archive/5.1.12/kicad-templates-5.1.12.tar.gz
+    sha256: 7b07b82b424875bfde34c6529b8524446bc8c4d608f48739380179520496596f
   - type: file
     path: org.kicad.KiCad.Library.Templates.metainfo.xml
