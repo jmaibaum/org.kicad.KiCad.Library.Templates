@@ -1,7 +1,7 @@
 id: org.kicad.KiCad.Library.Templates
-branch: stable
+branch: beta
 runtime: org.kicad.KiCad
-runtime-version: stable
+runtime-version: beta
 sdk: org.freedesktop.Sdk//21.08
 build-extension: true
 separate-locales: false
@@ -11,15 +11,22 @@ build-options:
 modules:
 - name: kicad-templates
   buildsystem: cmake-ninja
+  config-opts:
+  - -DKICAD_DATA=/app/extensions/Library/Templates
   post-install:
-  # Link kicad.pro template from main app into extension mountpoint
-  - ln -s /app/share/kicad/template/kicad.pro ${FLATPAK_DEST}/share/kicad/template/kicad.pro
+  # Copy `kicad.kicad_pro` template file from main source tree
+  - install -m644 --target-directory=${FLATPAK_DEST}/template kicad/template/kicad.kicad_pro
   - install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo org.kicad.KiCad.Library.Templates.metainfo.xml
   - appstream-compose --basename=org.kicad.KiCad.Library.Templates --prefix=${FLATPAK_DEST}
     --origin=flatpak org.kicad.KiCad.Library.Templates
   sources:
   - type: archive
-    url: https://gitlab.com/kicad/libraries/kicad-templates/-/archive/5.1.12/kicad-templates-5.1.12.tar.gz
-    sha256: 7b07b82b424875bfde34c6529b8524446bc8c4d608f48739380179520496596f
+    url: https://gitlab.com/kicad/libraries/kicad-templates/-/archive/6.0.0-rc1/kicad-templates-6.0.0-rc1.tar.gz
+    sha256: fb6402bea388fbc9cfde4cf54e7b3ca8af72fbaedc06fdc5318fe7ff8dd1d706
+  # Add KiCad source code into `kicad` subdir for `kicad.kicad_pro` template file
+  - type: archive
+    url: https://gitlab.com/kicad/code/kicad/-/archive/6.0.0-rc1/kicad-6.0.0-rc1.tar.gz
+    sha256: a1fbed57f09361a367c3670b0c802f80877eaadf8c750dd6f981802bdfec5d09
+    dest: kicad
   - type: file
     path: org.kicad.KiCad.Library.Templates.metainfo.xml
