@@ -21,12 +21,12 @@ modules:
     --origin=flatpak org.kicad.KiCad.Library.Templates
   sources:
   - type: archive
-    url: https://gitlab.com/kicad/libraries/kicad-templates/-/archive/6.0.2/kicad-templates-6.0.2.tar.gz
-    sha256: fe723cd2960350327a6d6c17adbcb6c28407d910b368023f31880ae04bf410cc
+    url: https://gitlab.com/kicad/libraries/kicad-templates/-/archive/6.0.3/kicad-templates-6.0.3.tar.gz
+    sha256: f89464f54efc420ec006fcded658b52cab810465803bac3f7ce9c5614d59a67c
   # Add KiCad source code into `kicad` subdir for `kicad.kicad_pro` template file
   - type: archive
-    url: https://gitlab.com/kicad/code/kicad/-/archive/6.0.2/kicad-6.0.2.tar.gz
-    sha256: 65870877d27379bee6362d0b0a1dd635cd989687e0b473a0cc3421a4fae612c3
+    url: https://gitlab.com/kicad/code/kicad/-/archive/6.0.3/kicad-6.0.3.tar.gz
+    sha256: 7c42c392808209c3ab67744fba780836e829f0ef68eede307e7276f30a26fa63
     dest: kicad
   - type: file
     path: org.kicad.KiCad.Library.Templates.metainfo.xml
