@@ -20,13 +20,23 @@ modules:
   - appstream-compose --basename=org.kicad.KiCad.Library.Templates --prefix=${FLATPAK_DEST}
     --origin=flatpak org.kicad.KiCad.Library.Templates
   sources:
-  - type: archive
-    url: https://gitlab.com/kicad/libraries/kicad-templates/-/archive/6.0.9/kicad-templates-6.0.9.tar.gz
-    sha256: fc748071bd77e49863adf1a9b9d5d5e23c2f59e1222447819fe6f0c8ac4676a3
+  - type: git
+    url: https://gitlab.com/kicad/libraries/kicad-templates.git
+    commit: ae2b46f8756d79379b90fec01d4fdde1ccfd73c1
+    tag: 6.0.9
+    x-checker-data:
+      type: git
+      tag-pattern: ^([\d\.]+)$
   # Add KiCad source code into `kicad` subdir for `kicad.kicad_pro` template file
-  - type: archive
-    url: https://gitlab.com/kicad/code/kicad/-/archive/6.0.9/kicad-6.0.9.tar.gz
-    sha256: 40c2180c4da0be5116356dd4ce55dea097d650647a83843b72da5e291aa388b0
+  - type: git
+    url: https://gitlab.com/kicad/code/kicad.git
+    commit: b29f91cc1569c31a96e7e20541e9f35c1c762cd0
+    tag: 6.0.9
     dest: kicad
+    x-checker-data:
+      type: git
+      tag-pattern: ^([\d\.]+)$
+      versions:
+        <: 6.99.0
   - type: file
     path: org.kicad.KiCad.Library.Templates.metainfo.xml
