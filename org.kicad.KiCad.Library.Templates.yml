@@ -9,34 +9,34 @@ appstream-compose: false
 build-options:
   prefix: /app/extensions/Library/Templates
 modules:
-- name: kicad-templates
-  buildsystem: cmake-ninja
-  config-opts:
-  - -DKICAD_DATA=/app/extensions/Library/Templates
-  post-install:
+  - name: kicad-templates
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DKICAD_DATA=/app/extensions/Library/Templates
+    post-install:
   # Copy `kicad.kicad_pro` template file from main source tree
-  - install -m644 --target-directory=${FLATPAK_DEST}/template kicad/template/kicad.kicad_pro
-  - install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo org.kicad.KiCad.Library.Templates.metainfo.xml
-  - appstream-compose --basename=org.kicad.KiCad.Library.Templates --prefix=${FLATPAK_DEST}
-    --origin=flatpak org.kicad.KiCad.Library.Templates
-  sources:
-  - type: git
-    url: https://gitlab.com/kicad/libraries/kicad-templates.git
-    commit: ae2b46f8756d79379b90fec01d4fdde1ccfd73c1
-    tag: 6.0.9
-    x-checker-data:
-      type: git
-      tag-pattern: ^([\d\.]+)$
+      - install -m644 --target-directory=${FLATPAK_DEST}/template kicad/template/kicad.kicad_pro
+      - install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo org.kicad.KiCad.Library.Templates.metainfo.xml
+      - appstream-compose --basename=org.kicad.KiCad.Library.Templates --prefix=${FLATPAK_DEST}
+        --origin=flatpak org.kicad.KiCad.Library.Templates
+    sources:
+      - type: git
+        url: https://gitlab.com/kicad/libraries/kicad-templates.git
+        commit: ae2b46f8756d79379b90fec01d4fdde1ccfd73c1
+        tag: 6.0.9
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d\.]+)$
   # Add KiCad source code into `kicad` subdir for `kicad.kicad_pro` template file
-  - type: git
-    url: https://gitlab.com/kicad/code/kicad.git
-    commit: b29f91cc1569c31a96e7e20541e9f35c1c762cd0
-    tag: 6.0.9
-    dest: kicad
-    x-checker-data:
-      type: git
-      tag-pattern: ^([\d\.]+)$
-      versions:
-        <: 6.99.0
-  - type: file
-    path: org.kicad.KiCad.Library.Templates.metainfo.xml
+      - type: git
+        url: https://gitlab.com/kicad/code/kicad.git
+        commit: 38e09789e55844e40d328f030d8d8a84d5c20e41
+        tag: 6.0.10
+        dest: kicad
+        x-checker-data:
+          type: git
+          tag-pattern: ^([\d\.]+)$
+          versions:
+            <: 6.99.0
+      - type: file
+        path: org.kicad.KiCad.Library.Templates.metainfo.xml
