@@ -1,7 +1,7 @@
 id: org.kicad.KiCad.Library.Templates
-branch: stable
+branch: beta
 runtime: org.kicad.KiCad
-runtime-version: stable
+runtime-version: beta
 sdk: org.freedesktop.Sdk//22.08
 build-extension: true
 separate-locales: false
@@ -14,8 +14,8 @@ modules:
     config-opts:
       - -DKICAD_DATA=/app/extensions/Library/Templates
     post-install:
-  # Copy `kicad.kicad_pro` template file from main source tree
-      - install -m644 --target-directory=${FLATPAK_DEST}/template kicad/template/kicad.kicad_pro
+      # Copy `kicad.kicad_pro` template file from main source tree
+      - install -m644 --target-directory=${FLATPAK_DEST}/template kicad/resources/project_template/kicad.kicad_pro
       - install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo org.kicad.KiCad.Library.Templates.metainfo.xml
       - appstream-compose --basename=org.kicad.KiCad.Library.Templates --prefix=${FLATPAK_DEST}
         --origin=flatpak org.kicad.KiCad.Library.Templates
@@ -26,17 +26,15 @@ modules:
         tag: 6.0.10
         x-checker-data:
           type: git
-          tag-pattern: ^([\d\.]+)$
-  # Add KiCad source code into `kicad` subdir for `kicad.kicad_pro` template file
+          tag-pattern: ^([\d\.]+[-rc\d]+)$
+      # Add KiCad source code into `kicad` subdir for `kicad.kicad_pro` template file
       - type: git
         url: https://gitlab.com/kicad/code/kicad.git
-        commit: 38e09789e55844e40d328f030d8d8a84d5c20e41
-        tag: 6.0.10
+        commit: 490fef9fd47b60e19bd7608e6a52c37a21333453
+        tag: 7.0.0-rc1
         dest: kicad
         x-checker-data:
           type: git
-          tag-pattern: ^([\d\.]+)$
-          versions:
-            <: 6.99.0
+          tag-pattern: ^([\d\.]+[-rc\d]+)$
       - type: file
         path: org.kicad.KiCad.Library.Templates.metainfo.xml
