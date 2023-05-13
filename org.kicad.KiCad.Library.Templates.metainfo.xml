@@ -9,6 +9,7 @@
   <metadata_license>CC-BY-SA-4.0</metadata_license>
   <update_contact>jmaibaum_AT_gmail.com</update_contact>
   <releases>
+    <release version="7.0.3" date="2023-05-12"/>
     <release version="7.0.2" date="2023-04-14"/>
     <release version="7.0.1" date="2023-03-09"/>
     <release version="6.0.11" date="2023-01-25"/>
