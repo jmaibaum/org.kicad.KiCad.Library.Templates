@@ -21,18 +21,18 @@ modules:
         --origin=flatpak org.kicad.KiCad.Library.Templates
     sources:
       - type: git
-        is-main-source: true
         url: https://gitlab.com/kicad/libraries/kicad-templates.git
-        commit: 3e80163450c3f320a09800d112ad3f46ee455d88
-        tag: 8.0.0-rc3
+        commit: 0a6c4f798a68a5c639d54b4d3093460ab9267816
+        tag: 8.0.1-rc1
         x-checker-data:
+          is-main-source: true
           type: git
           tag-pattern: ^([\d\.]+[-rc\d]+)$
       # Add KiCad source code into `kicad` subdir for `kicad.kicad_pro` template file
       - type: git
         url: https://gitlab.com/kicad/code/kicad.git
-        commit: afae6e2e9d9d9575fa6154174933eb3a0c61b7b7
-        tag: 8.0.0-rc3
+        commit: fa2ccdd083e3d244562a372dd04905fcb87cebfa
+        tag: 8.0.1-rc1
         dest: kicad
         x-checker-data:
           type: git
