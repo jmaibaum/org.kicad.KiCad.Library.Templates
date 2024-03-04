@@ -21,11 +21,11 @@ modules:
         --origin=flatpak org.kicad.KiCad.Library.Templates
     sources:
       - type: git
-        is-main-source: true
         url: https://gitlab.com/kicad/libraries/kicad-templates.git
         commit: 0a6c4f798a68a5c639d54b4d3093460ab9267816
         tag: 8.0.0
         x-checker-data:
+          is-main-source: true
           type: git
           tag-pattern: ^([\d\.]+)$
           versions:
