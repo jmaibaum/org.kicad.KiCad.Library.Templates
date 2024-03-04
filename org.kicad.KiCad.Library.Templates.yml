@@ -21,6 +21,7 @@ modules:
         --origin=flatpak org.kicad.KiCad.Library.Templates
     sources:
       - type: git
+        is-main-source: true
         url: https://gitlab.com/kicad/libraries/kicad-templates.git
         commit: 3e80163450c3f320a09800d112ad3f46ee455d88
         tag: 8.0.0-rc3
