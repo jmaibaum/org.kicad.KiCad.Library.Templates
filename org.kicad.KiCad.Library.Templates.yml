@@ -23,7 +23,7 @@ modules:
       - type: git
         url: https://gitlab.com/kicad/libraries/kicad-templates.git
         commit: 0a6c4f798a68a5c639d54b4d3093460ab9267816
-        tag: 8.0.0
+        tag: 8.0.1
         x-checker-data:
           is-main-source: true
           type: git
@@ -33,8 +33,8 @@ modules:
       # Add KiCad source code into `kicad` subdir for `kicad.kicad_pro` template file
       - type: git
         url: https://gitlab.com/kicad/code/kicad.git
-        commit: 942661fc10e172febf9d9990de2471d4b1020618
-        tag: 8.0.0
+        commit: ac408046cfde7a273ff267bed0cfd03cdfa6075e
+        tag: 8.0.1
         dest: kicad
         x-checker-data:
           type: git
