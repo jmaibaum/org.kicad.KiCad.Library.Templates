@@ -20,8 +20,8 @@ modules:
     sources:
       - type: git
         url: https://gitlab.com/kicad/libraries/kicad-templates.git
-        commit: b65257c57a6222d67db23a6d2b205600e3bf4c9a
-        tag: 8.0.7-rc1
+        commit: 5b7c6099d9b6676c95ca336ce46c16da4da7e0bb
+        tag: 9.0.0-rc1
         x-checker-data:
           is-main-source: true
           type: git
