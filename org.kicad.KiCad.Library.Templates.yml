@@ -29,13 +29,13 @@ modules:
       # Add KiCad source code into `kicad` subdir for `kicad.kicad_pro` template file
       - type: git
         url: https://gitlab.com/kicad/code/kicad.git
-        commit: 5d2b515f7b6a85bfa1de03fb6a274838b0f410a3
-        tag: 8.0.8-rc1
+        commit: 8d20cf454b821c8d541e0efbb5962b754a61d946
+        tag: 9.0.0-rc2
         dest: kicad
         x-checker-data:
           type: git
           tag-pattern: ^([\d\.]+[-rc\d]+)$
           versions:
-            <: 8.99.0
+            <: 9.99.0
       - type: file
         path: org.kicad.KiCad.Library.Templates.metainfo.xml
