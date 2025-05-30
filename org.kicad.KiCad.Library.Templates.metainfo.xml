@@ -9,8 +9,11 @@
   <metadata_license>CC-BY-SA-4.0</metadata_license>
   <update_contact>jmaibaum_AT_gmail.com</update_contact>
   <releases>
-    <release version="9.0.1-rc2" date="2025-03-24">
+    <release version="9.0.2-rc1" date="2025-05-30">
       <description></description>
+    </release>
+    <release version="9.0.1-rc2" date="2025-03-24">
+      <description/>
     </release>
     <release version="9.0.1-rc1" date="2025-03-17">
       <description/>
