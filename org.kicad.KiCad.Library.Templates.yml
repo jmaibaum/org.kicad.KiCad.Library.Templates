@@ -23,9 +23,11 @@ modules:
         commit: 3ed4538b0f965d821df63a5fffc4441e723cfe7f
         tag: 9.0.3-rc1
         x-checker-data:
+          type: json
+          url: https://gitlab.com/api/v4/projects/kicad%2Flibraries%2Fkicad-templates/repository/tags
+          tag-query: "[.[] | select(.name|test(\"^[\\\\d\\\\.]+-rc\\\\d+$\"; \"\"))] | first | .name"
+          timestamp-query: "[.[] | select(.name|test(\"^[\\\\d\\\\.]+-rc\\\\d+$\"; \"\"))] | first | .created_at"
           is-main-source: true
-          type: git
-          tag-pattern: ^([\d\.]+[-rc\d]+)$
       # Add KiCad source code into `kicad` subdir for `kicad.kicad_pro` template file
       - type: git
         url: https://gitlab.com/kicad/code/kicad.git
@@ -33,8 +35,10 @@ modules:
         tag: 9.0.3-rc1
         dest: kicad
         x-checker-data:
-          type: git
-          tag-pattern: ^([\d\.]+[-rc\d]+)$
+          type: json
+          url: https://gitlab.com/api/v4/projects/kicad%2Fcode%2Fkicad/repository/tags
+          tag-query: "[.[] | select(.name|test(\"^[\\\\d\\\\.]+-rc\\\\d+$\"; \"\"))] | first | .name"
+          timestamp-query: "[.[] | select(.name|test(\"^[\\\\d\\\\.]+-rc\\\\d+$\"; \"\"))] | first | .created_at"
           versions:
             <: 9.99.0
       - type: file
