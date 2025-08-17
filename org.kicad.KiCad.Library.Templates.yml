@@ -21,24 +21,26 @@ modules:
       - type: git
         url: https://gitlab.com/kicad/libraries/kicad-templates.git
         commit: 3ed4538b0f965d821df63a5fffc4441e723cfe7f
-        tag: 9.0.3
+        tag: 9.0.4
         x-checker-data:
           type: json
           url: https://gitlab.com/api/v4/projects/kicad%2Flibraries%2Fkicad-templates/repository/tags
-          tag-query: "[.[] | select(.name|test(\"^[\\\\d\\\\.]+$\"; \"\"))] | first | .name"
-          timestamp-query: "[.[] | select(.name|test(\"^[\\\\d\\\\.]+$\"; \"\"))] | first | .created_at"
+          tag-query: '[.[] | select(.name|test("^[\\d\\.]+$"; ""))] | first | .name'
+          timestamp-query: '[.[] | select(.name|test("^[\\d\\.]+$"; ""))] | first
+            | .created_at'
           is-main-source: true
       # Add KiCad source code into `kicad` subdir for `kicad.kicad_pro` template file
       - type: git
         url: https://gitlab.com/kicad/code/kicad.git
-        commit: 21b619854704ffd773334034a3bfba2b94cec531
-        tag: 9.0.3
+        commit: 19b2df46933c1f9e44f148a2bdb64828a834205a
+        tag: 9.0.4
         dest: kicad
         x-checker-data:
           type: json
           url: https://gitlab.com/api/v4/projects/kicad%2Fcode%2Fkicad/repository/tags
-          tag-query: "[.[] | select(.name|test(\"^[\\\\d\\\\.]+$\"; \"\"))] | first | .name"
-          timestamp-query: "[.[] | select(.name|test(\"^[\\\\d\\\\.]+$\"; \"\"))] | first | .created_at"
+          tag-query: '[.[] | select(.name|test("^[\\d\\.]+$"; ""))] | first | .name'
+          timestamp-query: '[.[] | select(.name|test("^[\\d\\.]+$"; ""))] | first
+            | .created_at'
           versions:
             <: 9.99.0
       - type: file
