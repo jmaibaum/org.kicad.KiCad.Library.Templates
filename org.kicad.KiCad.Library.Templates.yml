@@ -2,7 +2,7 @@ id: org.kicad.KiCad.Library.Templates
 branch: beta
 runtime: org.kicad.KiCad
 runtime-version: beta
-sdk: org.freedesktop.Sdk//24.08
+sdk: org.freedesktop.Sdk//25.08
 build-extension: true
 separate-locales: false
 appstream-compose: false
