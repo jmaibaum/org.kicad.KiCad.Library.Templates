@@ -1,5 +1,4 @@
 id: org.kicad.KiCad.Library.Templates
-branch: beta
 runtime: org.kicad.KiCad
 runtime-version: beta
 sdk: org.freedesktop.Sdk//25.08
