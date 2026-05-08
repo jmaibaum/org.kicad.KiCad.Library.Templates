@@ -1,7 +1,7 @@
 id: org.kicad.KiCad.Library.Templates
 runtime: org.kicad.KiCad
 runtime-version: stable
-sdk: org.freedesktop.Sdk//25.08
+sdk: org.gnome.Sdk//50
 build-extension: true
 separate-locales: false
 appstream-compose: false
@@ -20,7 +20,7 @@ modules:
       - type: git
         url: https://gitlab.com/kicad/libraries/kicad-templates.git
         commit: 3ed4538b0f965d821df63a5fffc4441e723cfe7f
-        tag: 10.0.1
+        tag: 10.0.2
         x-checker-data:
           type: json
           url: https://gitlab.com/api/v4/projects/kicad%2Flibraries%2Fkicad-templates/repository/tags
@@ -31,8 +31,8 @@ modules:
       # Add KiCad source code into `kicad` subdir for `kicad.kicad_pro` template file
       - type: git
         url: https://gitlab.com/kicad/code/kicad.git
-        commit: 2db9e5a72b7cf1e71bb8dff5257a88d4b41f812f
-        tag: 10.0.1
+        commit: f2a645f7f9db629e9fd64652611226eb731e87a1
+        tag: 10.0.2
         dest: kicad
         x-checker-data:
           type: json
