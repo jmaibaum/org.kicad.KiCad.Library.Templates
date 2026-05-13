@@ -24,9 +24,11 @@ modules:
         x-checker-data:
           type: json
           url: https://gitlab.com/api/v4/projects/kicad%2Flibraries%2Fkicad-templates/repository/tags
-          tag-query: '[.[] | select(.name|test("^[\\d\\.]+$"; ""))] | first | .name'
-          timestamp-query: '[.[] | select(.name|test("^[\\d\\.]+$"; ""))] | first
-            | .created_at'
+          tag-query: '[.[].name | select(match("^([\\d]+)\\.([\\d]+).*$"; "").captures
+            | (.[0].string | tonumber == 10) and (.[1].string | tonumber < 99))] |
+            first'
+          version-query: $tag
+          timestamp-query: .[] | select(.name == $tag).created_at
           is-main-source: true
       # Add KiCad source code into `kicad` subdir for `kicad.kicad_pro` template file
       - type: git
@@ -37,10 +39,10 @@ modules:
         x-checker-data:
           type: json
           url: https://gitlab.com/api/v4/projects/kicad%2Fcode%2Fkicad/repository/tags
-          tag-query: '[.[] | select(.name|test("^[\\d\\.]+$"; ""))] | first | .name'
-          timestamp-query: '[.[] | select(.name|test("^[\\d\\.]+$"; ""))] | first
-            | .created_at'
-          versions:
-            <: 10.99.0
+          tag-query: '[.[].name | select(match("^([\\d]+)\\.([\\d]+).*$"; "").captures
+            | (.[0].string | tonumber == 10) and (.[1].string | tonumber < 99))] |
+            first'
+          version-query: $tag
+          timestamp-query: .[] | select(.name == $tag).created_at
       - type: file
         path: org.kicad.KiCad.Library.Templates.metainfo.xml
